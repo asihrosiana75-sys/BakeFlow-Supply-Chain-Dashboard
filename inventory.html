@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>🥐 BakeFlow</h2>
+
+    <ul>
+    <li><a href="index.html">Dashboard</a></li>
+    <li><a class="active" href="inventory.html">Inventory</a></li>
+    <li><a href="forecast.html">Forecast</a></li>
+    <li><a href="production.html">Production</a></li>
+    <li><a href="supplier.html">Supplier</a></li>
+    <li><a href="report.html">Report</a></li>
+    </ul>
+</div>
+
+<div class="main-content">
+
+    <h1>📦 Inventory Management</h1>
+    <p>Pantau seluruh stok bahan baku bakery secara real-time.</p>
+
+    <!-- Inventory Table -->
+    <div class="section-card">
+
+        <table class="inventory-table">
+
+            <tr>
+                <th>Bahan</th>
+                <th>Stok</th>
+                <th>Min Stock</th>
+                <th>Status</th>
+                <th>Lokasi</th>
+                <th>Supplier</th>
+            </tr>
+
+            <tr>
+                <td>Tepung Terigu</td>
+                <td>8 kg</td>
+                <td>5 kg</td>
+                <td class="success">Aman</td>
+                <td>Rak A1</td>
+                <td>Toko Bahan Kue A</td>
+            </tr>
+
+            <tr>
+                <td>Butter</td>
+                <td>1 kg</td>
+                <td>2 kg</td>
+                <td class="danger">Reorder</td>
+                <td>Chiller 1</td>
+                <td>Supplier B Baking</td>
+            </tr>
+
+            <tr>
+                <td>Coklat Bubuk</td>
+                <td>0.5 kg</td>
+                <td>1 kg</td>
+                <td class="danger">Reorder</td>
+                <td>Rak B2</td>
+                <td>Distributor C</td>
+            </tr>
+
+            <tr>
+                <td>Whipping Cream</td>
+                <td>0.3 L</td>
+                <td>1 L</td>
+                <td class="warning">Low Stock</td>
+                <td>Chiller 2</td>
+                <td>Supplier D</td>
+            </tr>
+
+            <tr>
+                <td>Telur</td>
+                <td>20 pcs</td>
+                <td>10 pcs</td>
+                <td class="success">Aman</td>
+                <td>Chiller 3</td>
+                <td>Supplier E</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- Expiry Monitoring -->
+    <div class="section-card">
+
+        <h2>⚠️ Expiry Monitoring</h2>
+
+        <table class="inventory-table">
+
+            <tr>
+                <th>Bahan</th>
+                <th>Sisa Stok</th>
+                <th>Expiry Date</th>
+                <th>Sisa Umur Simpan</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>Whipping Cream</td>
+                <td>0.3 L</td>
+                <td>03 Jul 2026</td>
+                <td>3 Hari</td>
+                <td class="critical">Prioritas Digunakan</td>
+            </tr>
+
+            <tr>
+                <td>Susu UHT</td>
+                <td>2 L</td>
+                <td>06 Jul 2026</td>
+                <td>5 Hari</td>
+                <td class="warning">Monitoring</td>
+            </tr>
+
+            <tr>
+                <td>Butter</td>
+                <td>3 kg</td>
+                <td>20 Jul 2026</td>
+                <td>20 Hari</td>
+                <td class="safe">Aman</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

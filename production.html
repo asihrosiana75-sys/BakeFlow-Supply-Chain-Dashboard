@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Planning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>🥐 BakeFlow</h2>
+
+    <ul>
+        <li><a href="index.html">Dashboard</a></li>
+<li><a href="inventory.html">Inventory</a></li>
+<li><a href="forecast.html">Forecast</a></li>
+<li><a class="active" href="production.html">Production</a></li>
+<li><a href="supplier.html">Supplier</a></li>
+<li><a href="report.html">Report</a></li>
+    </ul>
+</div>
+
+<div class="main-content">
+
+    <h1>🥐 Production Planning</h1>
+    <p class="subtitle">
+        Weekly production planning based on demand forecasting and inventory availability.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Planned Production</h3>
+            <p>215 pcs</p>
+        </div>
+
+        <div class="card">
+            <h3>Available Capacity</h3>
+            <p>250 pcs</p>
+        </div>
+
+        <div class="card">
+            <h3>Capacity Utilization</h3>
+            <p>86%</p>
+        </div>
+
+        <div class="card">
+            <h3>Products Scheduled</h3>
+            <p>8</p>
+        </div>
+
+    </div>
+
+    <div class="section-card">
+
+        <h2>Weekly Production Schedule</h2>
+
+        <table class="inventory-table">
+
+            <tr>
+                <th>Product</th>
+                <th>Forecast</th>
+                <th>Safety Stock</th>
+                <th>Planned Production</th>
+                <th>Status</th>
+            </tr>
+
+            <tr>
+                <td>Salt Bread Original</td>
+                <td>45 pcs</td>
+                <td>5 pcs</td>
+                <td>50 pcs</td>
+                <td><span class="approved">Approved</span></td>
+            </tr>
+
+            <tr>
+                <td>Donat Mochi Chocolate</td>
+                <td>30 pcs</td>
+                <td>5 pcs</td>
+                <td>35 pcs</td>
+                <td><span class="approved">Approved</span></td>
+            </tr>
+
+            <tr>
+                <td>Brownies Fudge</td>
+                <td>22 pcs</td>
+                <td>3 pcs</td>
+                <td>25 pcs</td>
+                <td><span class="approved">Approved</span></td>
+            </tr>
+
+            <tr>
+                <td>Choco Chip Cookies</td>
+                <td>35 pcs</td>
+                <td>5 pcs</td>
+                <td>40 pcs</td>
+                <td><span class="pending">Pending Material</span></td>
+            </tr>
+
+            <tr>
+                <td>Bolu Marmer</td>
+                <td>18 pcs</td>
+                <td>2 pcs</td>
+                <td>20 pcs</td>
+               <td><span class="approved">Approved</span></td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div class="section-card">
+
+        <h2>📌 Production Insight</h2>
+
+        <p>
+            Salt Bread Original remains the highest-volume product and accounts for approximately 23% of weekly production capacity.
+        </p>
+
+        <br>
+
+        <p>
+            Production of Choco Chip Cookies is temporarily constrained by low chocolate inventory and will require replenishment before execution.
+        </p>
+
+        <br>
+
+        <p>
+            Current production utilization is projected at 86%, leaving sufficient capacity to accommodate demand fluctuations.
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>

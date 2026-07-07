@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BakeFlow Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>🥐 BakeFlow</h2>
+
+        <ul>
+        <li><a class="active" href="index.html">Dashboard</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="forecast.html">Forecast</a></li>
+        <li><a href="production.html">Production</a></li>
+        <li><a href="supplier.html">Supplier</a></li>
+        <li><a href="report.html">Report</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <div class="topbar">
+
+    <div>
+        <h1>BakeFlow Supply Chain Dashboard</h1>
+        <p class="subtitle">
+            Smart Bakery Supply Chain Monitoring System
+        </p>
+    </div>
+    
+
+    <div class="topbar-right">
+
+        <select class="filter-box">
+            <option>June 2026</option>
+            <option>May 2026</option>
+            <option>April 2026</option>
+        </select>
+        <div class="notification" onclick="showNotif()">
+            🔔
+            <span>3</span>
+        </div>
+
+        <div class="admin" onclick="adminProfile()">
+            👩🏻‍🍳 Admin
+        </div>
+
+    </div>
+
+</div>
+
+        <!-- KPI Cards -->
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total SKU</h3>
+                <p>20</p>
+            </div>
+
+            <div class="card">
+                <h3>Inventory Value</h3>
+                <p>Rp 4.200.000</p>
+            </div>
+
+            <div class="card">
+                <h3>Service Level</h3>
+                <p>96%</p>
+            </div>
+
+            <div class="card">
+                <h3>Forecast Accuracy</h3>
+                <p>89%</p>
+            </div>
+
+        </div>
+
+        <!-- Chart -->
+    <div class="chart-container">
+    <h2>Monthly Sales Trend</h2>
+
+    <div class="chart-box">
+        <canvas id="salesChart"></canvas>
+    </div>
+</div>
+
+    <div class="chart-container">
+    <h2>Product Category Distribution</h2>
+
+<div class="chart-wrapper">
+
+    <div class="category-chart-wrapper">
+        <canvas id="categoryChart"></canvas>
+    </div>
+</div>
+<div class="alert-card">
+    <h2>🔔 Recent Alerts</h2>
+
+    <div class="alert-item danger">
+        Butter stock below reorder point.
+    </div>
+
+    <div class="alert-item warning">
+        Supplier B delivery delayed by 2 days.
+    </div>
+
+    <div class="alert-item caution">
+        Whipping Cream expires in 3 days.
+    </div>
+
+    <div class="alert-item success">
+        Forecast updated successfully.
+    </div>
+
+</div>
+
+    </div>
+        
+        <div class="bottom-grid">
+
+        <div class="small-card">
+             <h3>🏆Top Products</h3>
+
+        <div class="product-item">
+            🥐 Salt Bread Original
+            <span>120 pcs</span>
+        </div>
+
+        <div class="product-item">
+            🍩 Donat Mochi Coklat
+            <span>98 pcs</span>
+        </div>
+
+        <div class="product-item">
+            🍪 Choco Chip Cookies
+            <span>76 pcs</span>
+        </div>
+
+        <div class="product-item">
+            🍰 Bolu Marmer
+            <span>54 pcs</span>
+        </div>
+    </div>
+
+
+    <div class="small-card">
+        <h3>📦Inventory Status</h3>
+
+        <div class="inventory-item">
+            Tepung Terigu
+            <span class="safe">Aman</span>
+        </div>
+
+        <div class="inventory-item">
+            Butter
+            <span class="danger">Reorder</span>
+        </div>
+
+        <div class="inventory-item">
+            Coklat Bubuk
+            <span class="danger">Reorder</span>
+        </div>
+
+        <div class="inventory-item">
+            Gula Pasir
+            <span class="safe">Aman</span>
+        </div>
+    </div>
+
+    <div class="small-card">
+    <h3>🛒 Procurement Status</h3>
+
+    <div class="supplier-item">
+        Open Purchase Orders
+        <span>5</span>
+    </div>
+
+    <div class="supplier-item">
+        Pending Deliveries
+        <span>2</span>
+    </div>
+
+    <div class="supplier-item">
+        Completed Orders
+        <span>18</span>
+    </div>
+</div>
+
+    <div class="section-card">
+    <h3>📦 Reorder Recommendation</h3>
+
+    <table class="dashboard-table">
+        <tr>
+            <th>Bahan</th>
+            <th>Stok Saat Ini</th>
+            <th>Reorder Point</th>
+            <th>Rekomendasi</th>
+        </tr>
+
+        <tr>
+            <td>Butter</td>
+            <td>1 kg</td>
+            <td>2 kg</td>
+            <td>Pesan 3 kg</td>
+        </tr>
+
+        <tr>
+            <td>Coklat Bubuk</td>
+            <td>0.5 kg</td>
+            <td>1 kg</td>
+            <td>Pesan 1.5 kg</td>
+        </tr>
+
+        <tr>
+            <td>Whipping Cream</td>
+            <td>0.3 L</td>
+            <td>1 L</td>
+            <td>Pesan 2 L</td>
+        </tr>
+    </table>
+</div>
+
+<div class="section-card">
+    <h3>🥐 Production Planning</h3>
+
+    <table class="dashboard-table">
+        <tr>
+            <th>Produk</th>
+            <th>Forecast</th>
+            <th>Produksi Disarankan</th>
+        </tr>
+
+        <tr>
+            <td>Salt Bread Original</td>
+            <td>45 pcs</td>
+            <td>50 pcs</td>
+        </tr>
+
+        <tr>
+            <td>Donat Mochi Chocolate</td>
+            <td>30 pcs</td>
+            <td>35 pcs</td>
+        </tr>
+
+        <tr>
+            <td>Brownies Fudge</td>
+            <td>20 pcs</td>
+            <td>22 pcs</td>
+        </tr>
+
+        <tr>
+            <td>Cookies Choco Chip</td>
+            <td>35 pcs</td>
+            <td>38 pcs</td>
+        </tr>
+    </table>
+</div>
+
+<div class="section-card">
+    <h3>🚨 Expiry Alert</h3>
+
+    <table class="dashboard-table">
+        <tr>
+            <th>Bahan</th>
+            <th>Sisa Stok</th>
+            <th>Sisa Umur Simpan</th>
+            <th>Status</th>
+        </tr>
+
+        <tr>
+            <td>Whipping Cream</td>
+            <td>0.8 Liter</td>
+            <td>3 Hari</td>
+            <td>🔴 Prioritas Digunakan</td>
+        </tr>
+
+        <tr>
+            <td>Susu UHT</td>
+            <td>2 Liter</td>
+            <td>5 Hari</td>
+            <td>🟠 Perlu Monitoring</td>
+        </tr>
+
+        <tr>
+            <td>Butter</td>
+            <td>3 Kg</td>
+            <td>28 Hari</td>
+            <td>🟢 Aman</td>
+        </tr>
+    </table>
+</div>
+
+
+<div class="section-card">
+
+    <h3>💡 Today's Bakery Insight</h3>
+
+    <div class="insight-card">
+        📈 Permintaan Salt Bread meningkat 28% dibanding minggu sebelumnya. Pastikan stok butter dan tepung terigu mencukupi kebutuhan produksi.
+    </div>
+
+    <div class="insight-card">
+        ⚠ Persediaan butter diperkirakan hanya cukup untuk dua hari produksi apabila tren penjualan saat ini berlanjut.
+    </div>
+
+    <div class="insight-card">
+        🥐 Donat Mochi Chocolate menjadi produk dengan pertumbuhan penjualan tertinggi minggu ini dengan kenaikan sebesar 12%.
+    </div>
+
+    <div class="insight-card">
+        ✅ Forecast accuracy mencapai 89%, menunjukkan perencanaan produksi sudah cukup mendekati permintaan aktual.
+    </div>
+
+</div>
+
+<div class="section-card">
+    <h3>📋 Recent Supply Chain Activities</h3>
+
+    <table class="activity-table">
+        <tr>
+            <th>Tanggal</th>
+            <th>Aktivitas</th>
+            <th>Status</th>
+        </tr>
+
+        <tr>
+            <td>01 Jul 2026</td>
+            <td>PO Butter 3 kg dikirim ke Supplier A</td>
+            <td class="success">Completed</td>
+        </tr>
+
+        <tr>
+            <td>01 Jul 2026</td>
+            <td>Forecast Minggu Depan berhasil diperbarui</td>
+            <td class="success">Completed</td>
+        </tr>
+
+        <tr>
+            <td>30 Jun 2026</td>
+            <td>Stok Coklat Bubuk mencapai reorder point</td>
+            <td class="warning">Warning</td>
+        </tr>
+
+        <tr>
+            <td>29 Jun 2026</td>
+            <td>Whipping Cream mendekati masa expired</td>
+            <td class="danger">Critical</td>
+        </tr>
+    </table>
+</div>
+<div class="section-card">
+
+    <h3>🚚 Supplier Performance</h3>
+
+    <table class="inventory-table">
+
+        <tr>
+            <th>Supplier</th>
+            <th>Lead Time</th>
+            <th>Rating</th>
+            <th>Status</th>
+        </tr>
+
+        <tr>
+            <td>Toko Bahan Kue A</td>
+            <td>2 Days</td>
+            <td>4.8 ⭐</td>
+            <td class="success">Excellent</td>
+        </tr>
+
+        <tr>
+            <td>Supplier B Baking</td>
+            <td>5 Days</td>
+            <td>4.3 ⭐</td>
+            <td class="warning">Good</td>
+        </tr>
+
+        <tr>
+            <td>Distributor C</td>
+            <td>7 Days</td>
+            <td>3.9 ⭐</td>
+            <td class="danger">Needs Review</td>
+        </tr>
+
+    </table>
+</div>
+
+<div class="small-card">
+    
+    <h3>⚠️ Expiry Risk Summary</h3>
+
+    <div class="supplier-item">
+        Critical Items
+        <span>1</span>
+    </div>
+
+    <div class="supplier-item">
+        Warning Items
+        <span>2</span>
+    </div>
+
+    <div class="supplier-item">
+        Safe Items
+        <span>17</span>
+    </div>
+</div>
+
+<div class="small-card">
+    <h3>🔥 Fast Moving Products</h3>
+
+    <div class="item-row">
+        <span>🥐 Salt Bread Original</span>
+        <span>↑ 24%</span>
+    </div>
+
+    <div class="item-row">
+        <span>🍩 Donat Mochi Coklat</span>
+        <span>↑ 18%</span>
+    </div>
+
+    <div class="item-row">
+        <span>🍪 Choco Chip Cookies</span>
+        <span>↑ 12%</span>
+    </div>
+</div>
+
+<div class="small-card">
+    <h3>🚚 Supplier Lead Time</h3>
+
+    <div class="item-row">
+        <span>Toko Bahan Kue A</span>
+        <span>2 days</span>
+    </div>
+
+    <div class="item-row">
+        <span>Supplier B Baking</span>
+        <span>3 days</span>
+    </div>
+
+    <div class="item-row">
+        <span>Distributor C</span>
+        <span>5 days</span>
+    </div>
+</div>
+
+<div class="small-card">
+    <h3>📦 Stock Movement</h3>
+
+    <div class="item-row">
+        <span>Incoming Stock</span>
+        <span class="success">+245 kg</span>
+    </div>
+
+    <div class="item-row">
+        <span>Production Usage</span>
+        <span class="danger">-180 kg</span>
+    </div>
+
+    <div class="item-row">
+        <span>Waste</span>
+        <span class="warning">-5 kg</span>
+    </div>
+</div>
+
+<div class="small-card">
+    <h3>💰 Recent Transactions</h3>
+
+    <div class="item-row">
+        <span>Flour Purchase</span>
+        <span>Rp 450k</span>
+    </div>
+
+    <div class="item-row">
+        <span>Butter Purchase</span>
+        <span>Rp 320k</span>
+    </div>
+
+    <div class="item-row">
+        <span>Cookies Sales</span>
+        <span>Rp 1.2M</span>
+    </div>
+</div>
+
+<div class="small-card">
+    <h3>📈 Revenue Summary</h3>
+
+    <div class="item-row">
+        <span>Revenue</span>
+        <span>Rp 18.5M</span>
+    </div>
+
+    <div class="item-row">
+        <span>COGS</span>
+        <span>Rp 11.2M</span>
+    </div>
+
+    <div class="item-row">
+        <span>Profit</span>
+        <span class="success">Rp 7.3M</span>
+    </div>
+</div>
+
+
+<div class="health-card">
+    <h3>Inventory Health Score</h3>
+    <h1>91%</h1>
+    <p>Overall inventory condition is healthy and under control.</p>
+</div>
+<div class="card">
+
+<h2>🎯 KPI Performance</h2>
+
+<table>
+
+<tr>
+
+<th>KPI Utama</th>
+
+<th>Value</th>
+
+</tr>
+
+<tr>
+
+<td>Forecast Accuracy</td>
+
+<td>89%</td>
+
+</tr>
+
+<tr>
+
+<td>Service Level</td>
+
+<td>96%</td>
+
+</tr>
+
+<tr>
+
+<th>KPI Pendukung</th>
+
+<th></th>
+
+</tr>
+
+<tr>
+
+<td>Lead Time</td>
+
+<td>2.8 Days</td>
+
+</tr>
+
+<tr>
+
+<td>Inventory Turnover</td>
+
+<td>8.2x</td>
+
+</tr>
+
+<tr>
+
+<th>KPI Tambahan</th>
+
+<th></th>
+
+</tr>
+
+<tr>
+
+<td>Supplier Rating</td>
+
+<td>4.6⭐</td>
+
+</tr>
+
+<tr>
+
+<td>Waste</td>
+
+<td>5 kg</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h2>🌳 Root Cause Analysis</h2>
+
+<div class="root-cause">
+
+    <div class="root-box">
+        🧈 Butter Stock Below Safety Stock
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="root-box">
+        🚚 Supplier Delivery Delayed
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="root-box">
+        🏭 Production Schedule Delayed
+    </div>
+
+    <div class="arrow">↓</div>
+
+    <div class="root-box">
+        💰 Risk of Stockout & Lost Sales
+    </div>
+
+</div>
+
+    </div>
+
+    <footer class="footer">
+    <p>© 2026 BakeFlow Supply Chain Dashboard</p>
+    <p>Developed by Asih Rosiana</p>
+</footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

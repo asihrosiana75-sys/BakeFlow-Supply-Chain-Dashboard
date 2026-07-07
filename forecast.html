@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demand Forecasting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>🥐 BakeFlow</h2>
+
+    <ul>
+<li><a href="index.html">Dashboard</a></li>
+<li><a href="inventory.html">Inventory</a></li>
+<li><a class="active" href="forecast.html">Forecast</a></li>
+<li><a href="production.html">Production</a></li>
+<li><a href="supplier.html">Supplier</a></li>
+<li><a href="report.html">Report</a></li>
+    </ul>
+</div>
+
+<div class="main-content">
+
+    <h1>📈 Demand Forecasting</h1>
+    <p>Prediksi permintaan produk untuk mendukung perencanaan produksi dan pembelian bahan baku.</p>
+
+  <div class="chart-container">
+    <h2>Weekly Demand Forecast</h2>
+
+    <div class="forecast-chart-box">
+        <canvas id="forecastChart"></canvas>
+    </div>
+
+    <div class="kpi-grid">
+
+<div class="card">
+
+<h3>Forecast Accuracy</h3>
+
+<h1>89%</h1>
+
+</div>
+
+<div class="card">
+
+<h3>MAPE</h3>
+
+<h1>11%</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Bias</h3>
+
+<h1>+2%</h1>
+
+</div>
+
+</div>
+
+    <div class="section-card">
+
+        <h2>Forecast Summary</h2>
+
+        <table class="inventory-table">
+            <tr>
+                <th>Produk</th>
+                <th>Penjualan Minggu Lalu</th>
+                <th>Forecast Minggu Depan</th>
+                <th>Growth</th>
+            </tr>
+
+            <tr>
+                <td>Salt Bread Original</td>
+                <td>38 pcs</td>
+                <td>45 pcs</td>
+                <td>+18%</td>
+            </tr>
+
+            <tr>
+                <td>Donat Mochi Chocolate</td>
+                <td>27 pcs</td>
+                <td>30 pcs</td>
+                <td>+11%</td>
+            </tr>
+
+            <tr>
+                <td>Brownies Fudge</td>
+                <td>18 pcs</td>
+                <td>22 pcs</td>
+                <td>+22%</td>
+            </tr>
+
+            <tr>
+                <td>Choco Chip Cookies</td>
+                <td>31 pcs</td>
+                <td>35 pcs</td>
+                <td>+13%</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script>
+const ctx = document.getElementById('forecastChart');
+
+new Chart(ctx,{
+    type:'bar',
+    data:{
+        labels:[
+            'Salt Bread',
+            'Donat Mochi',
+            'Brownies',
+            'Cookies'
+        ],
+        datasets:[{
+            label:'Forecast Demand',
+            data:[45,30,22,35]
+        }]
+    }
+});
+</script>
+
+</body>
+</html>
