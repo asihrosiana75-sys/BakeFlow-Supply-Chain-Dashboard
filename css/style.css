@@ -726,3 +726,94 @@ margin:30px 0;
     color:#D97706;
     font-weight:bold;
 }
+
+.insight-card {
+    margin-top: 20px;
+}
+
+
+.insight-card ul {
+    padding-left: 20px;
+}
+
+
+.insight-card li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+
+.insight-card h3 {
+    margin-top: 20px;
+}
+
+.insight-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.insight-card li {
+    margin-bottom: 10px;
+}
+
+.good {
+    color: green;
+    font-weight: bold;
+}
+
+
+.warning {
+    color: orange;
+    font-weight: bold;
+}
+
+
+.kpi-insight {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff7ed;
+    border-radius: 10px;
+}
+
+
+.kpi-insight h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.kpi-insight p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.kpi-status {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #4caf50;
+    font-weight: 600;
+}
+
+.kpi-warning {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #e89b00;
+    font-weight: 600;
+}
+
+.value {
+    font-size: 38px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.condition-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.condition-text {
+    font-size: 13px;
+}

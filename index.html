@@ -69,24 +69,33 @@
         <div class="cards">
 
             <div class="card">
-                <h3>Total SKU</h3>
-                <p>20</p>
+            <h3>Total SKU</h3>
+            <p class="value">20</p>
+            <span class="kpi-status">Active Products</span>
             </div>
 
-            <div class="card">
-                <h3>Inventory Value</h3>
-                <p>Rp 4.200.000</p>
-            </div>
+          
+           <div class="card">
+           <h3>Inventory Value</h3>
+           <p class="value">Rp 4.200.000</p>
+           <span class="kpi-status">Healthy Stock Value</span>
+        </div>
 
             <div class="card">
-                <h3>Service Level</h3>
-                <p>96%</p>
-            </div>
+           <h3>Service Level</h3>
+           <p class="value">96%</p>
+           <span class="kpi-status">
+           Target ≥ 95% 🟢 Good
+           </span>
+        </div>
 
-            <div class="card">
-                <h3>Forecast Accuracy</h3>
-                <p>89%</p>
-            </div>
+           <div class="card">
+           <h3>Forecast Accuracy</h3>
+           <p class="value">89%</p>
+           <span class="kpi-status">
+           Target ≥ 85% 🟢 Good
+           </span>
+        </div>
 
         </div>
 
@@ -515,91 +524,158 @@
     </div>
 </div>
 
-
-<div class="health-card">
-    <h3>Inventory Health Score</h3>
-    <h1>91%</h1>
-    <p>Overall inventory condition is healthy and under control.</p>
-</div>
 <div class="card">
 
 <h2>🎯 KPI Performance</h2>
-
+<div class="card">
 <table>
 
 <tr>
-
-<th>KPI Utama</th>
-
+<th>KPI UTAMA</th>
 <th>Value</th>
-
+<th>Target</th>
+<th>Status</th>
 </tr>
 
-<tr>
 
+<tr>
 <td>Forecast Accuracy</td>
-
-<td>89%</td>
-
+<td><b>89%</b></td>
+<td>≥ 85%</td>
+<td class="good">🟢 Good</td>
 </tr>
 
-<tr>
 
+<tr>
 <td>Service Level</td>
-
-<td>96%</td>
-
+<td><b>96%</b></td>
+<td>≥ 95%</td>
+<td class="good">🟢 Good</td>
 </tr>
 
 <tr>
-
-<th>KPI Pendukung</th>
-
-<th></th>
-
+<th>KPI PENDUKUNG</th>
+<th>Value</th>
+<th>Target</th>
+<th>Status</th>
 </tr>
 
 <tr>
-
 <td>Lead Time</td>
-
-<td>2.8 Days</td>
-
+<td><b>2.8 Days</b></td>
+<td>≤ 3 Days</td>
+<td class="good">🟢 Good</td>
 </tr>
 
 <tr>
-
 <td>Inventory Turnover</td>
-
-<td>8.2x</td>
-
+<td><b>8.2x</b></td>
+<td>≥ 8x</td>
+<td class="good">🟢 Good</td>
 </tr>
 
 <tr>
-
-<th>KPI Tambahan</th>
-
-<th></th>
-
+<th>KPI TAMBAHAN</th>
+<th>Value</th>
+<th>Target</th>
+<th>Status</th>
 </tr>
 
 <tr>
-
-<td>Supplier Rating</td>
-
-<td>4.6⭐</td>
-
-</tr>
-
-<tr>
-
 <td>Waste</td>
-
-<td>5 kg</td>
-
+<td><b>5 kg</b></td>
+<td>≤ 3 kg</td>
+<td class="warning">🟡 Review</td>
 </tr>
+
 
 </table>
+
+
+<div class="kpi-insight">
+
+<h3>💡 KPI Insight</h3>
+
+<p>
+🟢 <b>Forecast Accuracy 89%</b> dan 
+<b>Service Level 96%</b> berada di atas target.
+Hal ini menunjukkan sistem forecasting dan pemenuhan permintaan berjalan efektif.
+</p>
+
+<p>
+🟡 <b>Waste 5 kg</b> masih melebihi target maksimal 3 kg.
+Kondisi ini menunjukkan adanya potensi pemborosan bahan baku akibat
+produksi berlebih atau bahan mendekati expiry.
+</p>
+
+<p>
+<strong>Recommendation:</strong><br>
+→ Menyesuaikan jumlah produksi berdasarkan hasil forecasting.<br>
+→ Memprioritaskan penggunaan bahan dengan expiry terdekat.<br>
+→ Melakukan evaluasi supplier dan pola permintaan secara berkala.
+</p>
+
+</div>
+
+</div>
+<table>
+
+</table>
+
+</div>
+
+<!-- Business Insight Card -->
+
+<div class="card insight-card">
+
+<h2>💡 Bakery Business Insight</h2>
+
+<h3>Current Condition:</h3>
+
+<p class="condition-text">
+Inventory dan forecasting dalam kondisi stabil.
+</p>
+
+<ul>
+
+<li>
+🟢 <b>Forecast Accuracy 89%</b> menunjukkan prediksi permintaan
+sudah cukup akurat sehingga dapat menjadi dasar perencanaan produksi.
+</li>
+
+<li>
+🟢 <b>Service Level 96%</b> menunjukkan sebagian besar pesanan customer
+berhasil dipenuhi sesuai kebutuhan.
+</li>
+
+<li>
+🟡 <b>Waste 5 kg</b> masih perlu diperhatikan karena dapat meningkatkan
+biaya operasional dan menunjukkan adanya potensi bahan baku tidak optimal.
+</li>
+
+</ul>
+
+
+<h3>Recommendation:</h3>
+
+<ul>
+
+<li>
+Menyesuaikan jumlah produksi berdasarkan hasil demand forecast
+untuk mengurangi overproduction.
+</li>
+
+<li>
+Menerapkan metode penggunaan bahan berdasarkan expiry terdekat
+(FEFO - First Expired First Out).
+</li>
+
+<li>
+Melakukan monitoring supplier dengan lead time tinggi untuk
+mencegah keterlambatan produksi.
+</li>
+
+</ul>
 
 </div>
 
@@ -633,7 +709,13 @@
 
 </div>
 
-    </div>
+</div>
+
+<div class="health-card">
+    <h3>Inventory Health Score</h3>
+    <h1>91%</h1>
+    <p>Overall inventory condition is healthy and under control.</p>
+</div>
 
     <footer class="footer">
     <p>© 2026 BakeFlow Supply Chain Dashboard</p>
